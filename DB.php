@@ -13,7 +13,13 @@ function export()
 		
 		$sql="SELECT * FROM `comments`";
 		$res = mysqli_query($mysqli,$sql);
-			echo "<label>Отзывы посетителей</label>";
+		
+		if ($res->num_rows==0){
+		echo "</br>";
+		echo "Здесь пока что нет отзывов.Ваш может стать первым!";}	
+		//print_r($res);
+		
+		else {
 			echo "<table>";
 			echo "<tr>";
 				while($comment = mysqli_fetch_assoc($res))
@@ -26,8 +32,10 @@ function export()
 					echo "<div>{$comment['ip']}</div>";
 					echo "</td>";
 					echo "</tr>";
+								
+
 				}
 				
 			echo "</table>";
-
+}
 	} 
