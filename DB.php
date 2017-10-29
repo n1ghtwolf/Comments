@@ -23,19 +23,15 @@ function export()
 			echo "<table>";
 			echo "<tr>";
 				while($comment = mysqli_fetch_assoc($res))
-				{
-					
+				{					
 					echo "<td>";
 					echo "<div> Отзыв №{$comment['id']}</div>";
 					echo "<div>{$comment['comment']}</div>";
 					echo "<div>{$comment['name']}</div>";
 					echo "<div>{$comment['ip']}</div>";
 					echo "</td>";
-					echo "</tr>";
-								
-
+					echo "</tr>";						
 				}
-				
 			echo "</table>";
 }
 	} 
